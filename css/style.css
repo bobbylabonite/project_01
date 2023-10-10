@@ -1,0 +1,93 @@
+body{
+    background-color: black;
+    background-image: url('https://cdn.glitch.global/795123bd-84bf-4328-85e4-f59397b95b63/dark-sunset-wallpaper-23.jpg?v=1693887685716');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  h1 {
+      display: block;
+      color: #E87E38;
+      text-align: center;
+      font-style: oblique 10deg;
+  }
+  
+  h2{
+    text-align: center;
+    color: #f8996b;
+    font-style: italic;
+  }
+  
+  img {    
+      display: block;
+      width: 250px;
+      height: 150px;
+      border: 3px solid #E88D3D;
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 5px;
+  }
+  
+  p{
+    text-align: center;
+    color: #f8d6b3;
+    font-style: oblique;
+    
+  }
+  h4{
+    text-align: center;
+    text-decoration:underline;
+    color: #E87E38;
+    font-style: italic;
+  }
+  a{
+    color: darkblue;
+    width: 150%;
+    text-align: center;
+    font-style: italic;
+  }
+  
+  li{
+    margin: 10px 0px
+    
+  }
+  
+  ol.center li
+  {
+    color: #F5DF96;
+   text-align: left;
+   margin-left: 40%;
+    font-style: oblique 5deg;
+  }
+  
+  ul.center li                               
+  {
+    color: #F5DF96;
+   text-align: left;
+   margin-left: 40%;
+    font-style: oblique 5deg;
+  }
+
+.clickme{
+    background-color: orange;
+    color: white;
+    text-align: center;
+    padding: 15px 32px;
+    font-size: 20px;
+    }
+  
+.clickme:hover{
+
+  background-color: aquamarine;
+  color: black;
+
+}
+
+.yt{
+  border: red 5px solid;
+}
+
+
+  
