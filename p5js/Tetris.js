@@ -1,119 +1,10 @@
-/*
-var doggo;
-var meow;
-var dogpositionX = 50;
-var ellipseX;
 
-var squareSize, lineWidth;
-//checkclick = false;
-
-function preload(){
-
-doggo = loadImage("../media/images/doggo.jpg");
-//meow = loadSound("../media/audio/meow.wav");
-
-
-}
-
-function setup() {
-
-  createCanvas(windowWidth, windowHeight);
-
-  ellipseX = random(100,400);
-
-  rectMode(CENTER);
-
-  background(220);
-
-  ellipse(ellipseX, 300, 50);
-  ellipse(ellipseX, 350, 75);
-
-  
-
-
-}
-
-function draw() {
-  
-  squareSize = random(4,250);
-  lineWidth = random(4,28);
-
-  push();
-
-  strokeWeight(lineWidth);
-  stroke(0, 0, 255, 10);
-  fill(0,random(255), 0, 10);
-  square( 200, 150, squareSize);
-
-  pop();
-
-  for(var i = 0 ; i <= width ; i = i + 50) {
-    ellipse( i, i, 25);
-
-  }
-
-  //doggo.mouseClicked( event =>{}
-  
-  rect(50, 50, 100, 100 );
-
-  
-  
-
-  push()
-    fill("red");
-    ellipse(100,100, 150);
-  pop()
-
-  fill("blue");
-  beginShape();
-    vertex(180,82);
-    vertex(207,36);
-    vertex(214,63);
-    vertex(407,11);
-    vertex(412,30);
-    vertex(219,82);
-    vertex(226,109);
-  endShape(CLOSE);
-
-
-  arc(200,200,80,80,0,PI);
-  arc(300,300,80,80,3.14,2*PI);
-  arc(300,400,80,80,1.57,PI);
-  arc(300,500,80,80,-3, PI);
-
-  image(doggo, dogpositionX ,300,100,100);
-  
-
-  
-  push()
-  fill(0)
-  text(mouseX + "," + mouseY, 20, 20)
-  pop()
-
- if(keyIsDown(65)){                      // if key is pressed and hold it will move doggo to the right
-
-  dogpositionX = dogpositionX +10;
-
- }
-if(key == 'd'){                       // if key is pressed one time it keeps moving to the left
-
-  dogpositionX = dogpositionX -10;
-}
-
-}
-/*
-function mousePressed(){
-
-  meow.play();
-
-  if (key =='x') {
-    meow.play();
-  }
-*/
 let keyPressUp = false;
 let keyPressDown = false;
 let keyPressLeft = false;
 let keyPressRight = false;
+let img;
+let img2;
 var shapeList = [
   [0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0], // I 1
   [0, 2, 0, 0, 2, 0, 0, 2, 2], // L 2
@@ -136,6 +27,8 @@ var pallette = [
 ];
 function setup() {
   createCanvas(windowWidth - 40, windowHeight - 40);
+  img = loadImage('../media/images/tetris4.png');
+  img2 = loadImage('../media/images/giphy3.gif');
 
   this.tetris = new Tetris(10, 20);
   this.timer = new Timer();
@@ -151,6 +44,7 @@ function setup() {
   }
 }
 function draw() {
+  
   if (this.timer.updateStep()) {
     applyInput(25);
   }
@@ -169,17 +63,17 @@ function applyInput(newDelay) {
 function keyPressed() {
   if (keyCode == 32) this.tetris.pause = !this.tetris.pause;
   if (keyCode == 13) this.tetris.restart = true;
-  keyPressUp |= keyCode === UP_ARROW;
-  keyPressDown |= keyCode === DOWN_ARROW;
-  keyPressLeft |= keyCode === LEFT_ARROW;
-  keyPressRight |= keyCode === RIGHT_ARROW;
+  keyPressUp |= keyCode === 87;
+  keyPressDown |= keyCode === 83;
+  keyPressLeft |= keyCode === 65;
+  keyPressRight |= keyCode === 68;
   applyInput(200);
 }
 function keyReleased() {
-  keyPressUp ^= keyCode === UP_ARROW;
-  keyPressDown ^= keyCode === DOWN_ARROW;
-  keyPressLeft ^= keyCode === LEFT_ARROW;
-  keyPressRight ^= keyCode === RIGHT_ARROW;
+  keyPressUp ^= keyCode === 87;
+  keyPressDown ^= keyCode === 83;
+  keyPressLeft ^= keyCode === 65;
+  keyPressRight ^= keyCode === 68;
 }
 class Tetris {
   constructor(nx, ny) {
@@ -263,12 +157,15 @@ class Tetris {
     h = this.tGrid.ny * cell;
     x = parseInt((canvasW - w) / 2.0);
     y = parseInt((canvasH - h) / 2.0);
-    canvas.background(50);
+    canvas.background(0);
+    //FIXME canvas image
+    canvas.image(img, 200, 10, 200, 100);
+    canvas.image(img2,200, 100, 200,500 );
     canvas.strokeWeight(1);
     canvas.noStroke();
-    canvas.fill(16);
+    canvas.fill(0,255,0);
     canvas.rect(x - 4, y - 4, w + 8, h + 8);
-    canvas.fill(32);
+    canvas.fill(0,255,0);
     canvas.rect(x - 1, y - 1, w + 3, h + 3);
     // Game screen
     var colors = this.pause || this.gameOver ? palletteMono : pallette;
@@ -285,11 +182,11 @@ class Tetris {
     {
       var ty = off + 32;
       var tx = x + w + x / 2;
-      var txtTitle = "TETRIS GAME";
+      var txtTitle = "Next Shape:";
       canvas.textAlign(CENTER, CENTER);
       canvas.noStroke();
       canvas.textSize(32);
-      canvas.fill(200);
+      canvas.fill(152,71,191);
       canvas.text(txtTitle, tx, ty);
     }
     // Came level, ...
@@ -301,10 +198,10 @@ class Tetris {
       var txtShapes = "SHAPE " + this.shapesCount;
       canvas.textAlign(CENTER, CENTER);
       canvas.noStroke();
-      canvas.fill(200);
+      canvas.fill(25, 227, 223);
       canvas.textSize(24);
       canvas.text(txtLevel, tx1, ty);
-      canvas.fill(96);
+      canvas.fill(210,52,10);
       canvas.textSize(16);
       canvas.text(txtProgress, tx1, (ty += 24));
       canvas.text(txtShapes, tx1, (ty += 16));
@@ -327,20 +224,21 @@ class Tetris {
       var ty = canvasH - 6 * 15 - off;
       var tx1 = x + w + 40;
       var tx2 = tx1 + 70;
+      canvas.textFont("Retro Gaming");
       canvas.textAlign(LEFT);
       canvas.noStroke();
       canvas.textSize(14);
-      canvas.fill(96);
-      canvas.text("UP", tx1, ty);
+      canvas.fill(0,240,0);
+      canvas.text("W key", tx1, ty);
       canvas.text("- ROTATE", tx2, ty);
       ty += 15;
-      canvas.text("LEFT", tx1, ty);
+      canvas.text("A key", tx1, ty);
       canvas.text("- MOVE LEFT", tx2, ty);
       ty += 15;
-      canvas.text("RIGHT", tx1, ty);
+      canvas.text("D key", tx1, ty);
       canvas.text("- MOVE RIGHT", tx2, ty);
       ty += 15;
-      canvas.text("DOWN", tx1, ty);
+      canvas.text("S key", tx1, ty);
       canvas.text("- MOVE DOWN", tx2, ty);
       ty += 25;
       canvas.text("SPACE", tx1, ty);

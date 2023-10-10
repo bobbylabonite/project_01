@@ -1,6 +1,18 @@
+@import url(https://db.onlinewebfonts.com/c/4c19fc875e7ba1e6831129de3ab5ac0b?family=Retro+Gaming);
+
+@font-face {
+  font-family: "Retro Gaming";
+  src: url("https://db.onlinewebfonts.com/t/4c19fc875e7ba1e6831129de3ab5ac0b.eot");
+  src: url("https://db.onlinewebfonts.com/t/4c19fc875e7ba1e6831129de3ab5ac0b.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/4c19fc875e7ba1e6831129de3ab5ac0b.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/4c19fc875e7ba1e6831129de3ab5ac0b.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/4c19fc875e7ba1e6831129de3ab5ac0b.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/4c19fc875e7ba1e6831129de3ab5ac0b.svg#Retro Gaming")format("svg");
+}
+
 body{
     background-color: black;
-    background-image: url('https://cdn.glitch.global/795123bd-84bf-4328-85e4-f59397b95b63/dark-sunset-wallpaper-23.jpg?v=1693887685716');
+    background-image: url(../media/images/space-background-spaceship-arcade-game-090062351_prevstill.png) ;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -10,30 +22,24 @@ body{
       display: block;
       color: #E87E38;
       text-align: center;
-      font-style: oblique 10deg;
+      font-family: "Retro Gaming";
   }
   
   h2{
     text-align: center;
     color: #f8996b;
     font-style: italic;
+    font-family: "Retro Gaming";
   }
   
-  img {    
-      display: block;
-      width: 250px;
-      height: 150px;
-      border: 3px solid #E88D3D;
-      margin-top: 10px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 5px;
-  }
+ 
   
   p{
     text-align: center;
     color: #f8d6b3;
     font-style: oblique;
+    font-family: "Retro Gaming";
+
     
   }
   h4{
@@ -76,6 +82,8 @@ body{
     text-align: center;
     padding: 15px 32px;
     font-size: 20px;
+    font-family: "Retro Gaming";
+
     }
   
 .clickme:hover{
@@ -84,10 +92,31 @@ body{
   color: black;
 
 }
+.ads{
+ margin: 0 10px;
+ border: red 5px solid;
+
+}
+.imgborder{
+  margin: 0 10px;
+  border: #f87123 5px solid;
+}
 
 .yt{
   border: red 5px solid;
 }
 
-
+#container {
+  text-align:center;   
+  padding: 20px;
+}
+#container img {
+  margin: 0 10px;   
   
+}
+#container .block {
+  display:inline-block;
+  width:300px;
+  vertical-align:top;
+  
+}

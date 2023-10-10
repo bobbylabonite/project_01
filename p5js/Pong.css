@@ -1,3 +1,15 @@
+@import url(https://db.onlinewebfonts.com/c/4c19fc875e7ba1e6831129de3ab5ac0b?family=Retro+Gaming);
+
+@font-face {
+  font-family: "Retro Gaming";
+  src: url("https://db.onlinewebfonts.com/t/4c19fc875e7ba1e6831129de3ab5ac0b.eot");
+  src: url("https://db.onlinewebfonts.com/t/4c19fc875e7ba1e6831129de3ab5ac0b.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/4c19fc875e7ba1e6831129de3ab5ac0b.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/4c19fc875e7ba1e6831129de3ab5ac0b.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/4c19fc875e7ba1e6831129de3ab5ac0b.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/4c19fc875e7ba1e6831129de3ab5ac0b.svg#Retro Gaming")format("svg");
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -7,7 +19,47 @@ html, body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5%;
+    margin-top: 1%;
   }
 
-  
+  h1 {
+    display: block;
+    color: #40eb51;
+    text-align: center;
+    font-family: "Retro Gaming";
+}
+
+body{
+  background-color: black;
+  background-image: url(../media/images/pongbackground.jpg) ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.clickme{
+  margin-left: 46.5%;
+  margin-top: 10px;
+  background-color: rgba(0, 255, 72, 0.605);
+  color: white;
+  text-align: center;
+  padding: 15px 32px;
+  font-size: 20px;
+  font-family: "Retro Gaming";
+
+  }
+
+.clickme:hover{
+
+background-color: rgb(9, 11, 10);
+color: rgb(122, 255, 122);
+
+}
+
+footer{
+  text-align: center;
+  padding: 10px;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+}
