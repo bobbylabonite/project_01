@@ -28,7 +28,7 @@ var pallette = [
 function setup() {
   createCanvas(windowWidth - 40, windowHeight - 40);
   img = loadImage('../media/images/tetris4.png');
-  img2 = loadImage('../media/images/giphy3.gif');
+  img2 = loadImage('../media/images/tetris heart2.gif');
 
   this.tetris = new Tetris(10, 20);
   this.timer = new Timer();
@@ -159,7 +159,7 @@ class Tetris {
     y = parseInt((canvasH - h) / 2.0);
     canvas.background(0);
     //FIXME canvas image
-    canvas.image(img, 200, 10, 200, 100);
+    canvas.image(img, 200, 20, 200, 100);
     canvas.image(img2,200, 100, 200,500 );
     canvas.strokeWeight(1);
     canvas.noStroke();

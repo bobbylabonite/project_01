@@ -8,8 +8,8 @@ let leftPaddleY = 200;
 let rightPaddleY = 200;
 let ballX = 100;
 let ballY = 100;
-let ballSpeedX = 15;
-let ballSpeedY = 15;
+let ballSpeedX = 20;
+let ballSpeedY = 20;
 let leftScore = 0;
 let rightScore = 0;
 
@@ -17,7 +17,7 @@ let rightScore = 0;
 function setup() {
   
   
-  createCanvas(windowWidth-40, 600);
+  createCanvas(windowWidth-100, windowHeight-100);
   colorMode(HSB, 360, 100,100,100);
   rectMode(CENTER);
 
@@ -34,7 +34,7 @@ function draw() {
 
     drawingContext.shadowBlur = 32;
     drawingContext.shadowColor = color(100,90,100);
-    rect(width/2,height/2,width,600);
+    rect(width/2,height/2,width,height);
   
     // Draw the paddles
     rect(10, leftPaddleY - PADDLE_HEIGHT / 2, PADDLE_WIDTH, PADDLE_HEIGHT);
